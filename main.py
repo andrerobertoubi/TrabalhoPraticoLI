@@ -42,8 +42,28 @@ import math
 NUMERO_MINIMO = 4
 NUMERO_MAXIMO = 13
 
+def dividir_por_dois(vetor):
+    return [x / 2 for x in vetor]
+
+def multiplos_de_tres(vetor):
+    return [vetor[i] for i in range(len(vetor)) if i % 3 == 0 and i != 0]
+
+def ordenar_ordem_decrescente(vetor):
+    return sorted(vetor, reverse=True)
+
+def matrix_2x12(vetor):
+    matriz = [vetor] # primeira linha
+    matriz.append([random.randint(NUMERO_MINIMO, NUMERO_MAXIMO) for _ in range(12)]) # segunda linha
+    return f'{matriz[0]}\n{matriz[1]}'
+
+def elemento_aleatorio(vetor):
+    return random.choice(vetor)
+
+def raiz_quadrada(vetor):
+    return [math.sqrt(x) for x in vetor]
+
 if __name__ == "__main__":
-    numeros_inteiros = []
+    vetor = []
 
     while True:
         entrada = input(f"Digite um número inteiro entre {NUMERO_MINIMO} e {NUMERO_MAXIMO} (ou 'sair' para encerrar): ")
@@ -52,8 +72,8 @@ if __name__ == "__main__":
         try:
             numero = int(entrada)
             if numero >= NUMERO_MINIMO and numero <= NUMERO_MAXIMO:
-                numeros_inteiros.append(numero)
-                print('Números inteiros válidos inseridos:', numeros_inteiros)
+                vetor.append(numero)
+                print('Números inteiros válidos inseridos:', vetor)
             else:
                 print(f'Por favor, digite um número entre {NUMERO_MINIMO} e {NUMERO_MAXIMO}.')
         except ValueError:
@@ -72,25 +92,17 @@ if __name__ == "__main__":
         opcao = input("Escolha uma opção: ")
         
         if opcao == '1':
-            resultado = [x / 2 for x in numeros_inteiros]
-            print("Resultado da divisão por 2:", resultado)
+            print("Resultado da divisão por 2:", dividir_por_dois(vetor))
         elif opcao == '2':
-            resultado = [numeros_inteiros[i] for i in range(len(numeros_inteiros)) if i % 3 == 0 and i != 0]
-            print("Valores em posições múltiplas de três:", resultado)
+            print("Valores em posições múltiplas de três:", multiplos_de_tres(vetor))
         elif opcao == '3':
-            resultado = sorted(numeros_inteiros, reverse=True)
-            print("Vetor ordenado em ordem decrescente:", resultado)
+            print("Vetor ordenado em ordem decrescente:", ordenar_ordem_decrescente(vetor))
         elif opcao == '4':
-            matriz = [numeros_inteiros, [random.randint(NUMERO_MINIMO, NUMERO_MAXIMO) for _ in range(12)]]
-            print("Matriz 2x12:")
-            for linha in matriz:
-                print(linha)
+            print("Matriz 2x12:\n", matrix_2x12(vetor))
         elif opcao == '5':
-            elemento_aleatorio = random.choice(numeros_inteiros)
-            print("Elemento aleatório do vetor:", elemento_aleatorio)
+            print("Elemento aleatório do vetor:", elemento_aleatorio(vetor))
         elif opcao == '6':
-            resultado = [math.sqrt(x) for x in numeros_inteiros]
-            print("Raiz quadrada de todos os elementos:", resultado)
+            print("Raiz quadrada de todos os elementos:", raiz_quadrada(vetor))
         elif opcao == '7':
             print("Encerrando o programa.")
             break
