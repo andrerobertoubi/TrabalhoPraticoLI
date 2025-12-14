@@ -1,0 +1,32 @@
+@mainpage Trabalho prático
+O objetivo deste trabalho  é  implementar  um programa que peça ao utilizador 18
+números inteiros e os guarde num vetor, para  posteriormente  providenciar forma
+de calcular algumas estatísticas ou fazer operações sobre esses valores.
+Os valores pedidos devem estar compreendidos entre 1 e 26.
+Deve ser feita a VALIDAÇÃO DE ENTRADA!
+
+Após terem sido pedidos os valores, deve  ser mostrado um menu ao utilizador que
+lhe permita calcular cada  uma  das  estatísticas referidas em baixo, exatamente
+pela  ordem  colocadas  neste  enunciado.  Depois de  se  escolher  uma opção, o
+resultado deve ser mostrado no ecrã, e o menu deve voltar a ser exibido.
+As funcionalidades mínimas a disponibilizar são as seguintes:
+  1 - Identificação do máximo de todos os elementos do vetor;
+  2 - Construção de uma matriz 4 por 18, em que cada linha é composta pelo vetor
+      lido;
+  3 - Cálculo da tangente (tan) da primeira metade dos elementos no vetor;
+  4 - Devolução da soma dos valores do vetor que são divisíveis por três;
+  5 - Cálculo  da  subtração  da  primeira  metade  dos  elementos no  vetor com
+      os da segunda metade (dá um vetor com metado do tamanho);
+  6 - Devolução do vetor ordenado por ordem decrescente.
+Uma  versão  mais elaborada  do projeto  deve exibir adicionalmente as seguintes
+características e funcionalidades:
+  1 - Leitura de um novo vetor, cálculo e devolução do produto interno;
+  2 - Apresentação da decomposição em números  primos  dos  números  impares  no
+      vetor inicial;
+  3 - Leitura  de  um novo vetor  1x18,  cálculo  e  devolução  da  matriz 18x18
+      resultante do produto do vetor inicial com o novo vetor gerado;
+  4 - Cálculo do determinante da matriz referida no ponto anterior;
+  5 - O programa apresenta  adicionalmente  uma  página de ajuda, acessível como
+      sendo a entrada 7 no menu.
+  6 - O programa  mostra  alguma  ajuda  quando é executado a partir da linha de
+      comandos com a flag --help.
